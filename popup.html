@@ -1,0 +1,47 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Facebook Job Capture</title>
+  <link rel="stylesheet" href="popup.css" />
+</head>
+<body>
+  <main>
+    <h1>Facebook Job Capture</h1>
+    <div id="build">v1.0.2 • Facebook Feed / Groups</div>
+
+    <div class="row">
+      <button id="scan">Auto scroll + scan</button>
+      <button id="clear" class="secondary">Clear</button>
+    </div>
+
+    <div class="row"><button id="stop" class="secondary">Stop scan</button></div>
+    <p>Employer hiring posts only • ไม่เก็บโพสต์คนหางาน</p>
+    <div id="status">Open Facebook Feed or Group, then scan</div>
+
+    <label>
+      API endpoint
+      <input id="endpoint" value="http://localhost:3000/api/jobs/import" />
+    </label>
+
+    <label class="check">
+      <input type="checkbox" id="autoSend" />
+      Send to API after scan
+    </label>
+
+    <div class="stats">
+      <span>Saved</span>
+      <strong id="count">0</strong>
+    </div>
+
+    <div class="row">
+      <button id="send" class="secondary">Send API</button>
+      <button id="json" class="secondary">JSON</button>
+      <button id="csv" class="secondary">CSV</button>
+    </div>
+
+    <script src="popup.js"></script>
+  </main>
+</body>
+</html>

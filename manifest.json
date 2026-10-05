@@ -1,0 +1,39 @@
+{
+  "manifest_version": 3,
+  "name": "Facebook Job Capture",
+  "version": "1.0.2",
+  "description": "Capture job posts from Facebook Feed and Groups, with auto scroll, contacts, JSON/CSV and local API.",
+  "permissions": [
+    "storage",
+    "activeTab",
+    "downloads"
+  ],
+  "host_permissions": [
+    "https://www.facebook.com/*",
+    "https://facebook.com/*",
+    "http://localhost/*",
+    "http://127.0.0.1/*"
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Facebook Job Capture"
+  },
+  "background": {
+    "service_worker": "background.js"
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.facebook.com/*",
+        "https://facebook.com/*"
+      ],
+      "js": [
+        "shared.js",
+        "job-filter.js",
+        "facebook-feed.js",
+        "content.js"
+      ],
+      "run_at": "document_idle"
+    }
+  ]
+}
